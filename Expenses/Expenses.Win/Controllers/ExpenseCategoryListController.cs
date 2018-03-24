@@ -2,7 +2,7 @@
 using Expenses.Repository;
 using Expenses.Win.ViewModelBuilders;
 using Expenses.Win.ViewModels;
-using Expenses.Win.Views;
+using Expenses.Win.Views.ExpenseCategoryList;
 
 namespace Expenses.Win.Controllers
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Expenses.Models;
 using Newtonsoft.Json;
@@ -20,9 +21,9 @@ namespace Expenses.Repository.File
 
 		private void LoadFromFile()
 		{
-			if (System.IO.File.Exists(_fileName))
+			if (!System.IO.File.Exists(_fileName))
 			{
-				System.IO.File.Create(_fileName);
+				using (new StreamWriter(_fileName)) { }
 			}
 			var json = System.IO.File.ReadAllText(_fileName);
 			try
@@ -31,8 +32,32 @@ namespace Expenses.Repository.File
 			}
 			catch (Exception)
 			{
-				_expenseCategories = new List<ExpenseCategory>();
+				CreateFile();
 			}
+
+			if (_expenseCategories == null || !_expenseCategories.Any())
+			{
+				CreateFile();
+			}
+		}
+
+		private void CreateFile()
+		{
+			var nr = 0;
+			var defaultCategories = new[]
+			{
+				ExpenseCategoryConstants.Tithe, ExpenseCategoryConstants.Clothing, ExpenseCategoryConstants.Economy,
+				ExpenseCategoryConstants.Food, ExpenseCategoryConstants.Investment,
+				ExpenseCategoryConstants.Maintenance, ExpenseCategoryConstants.Transport, ExpenseCategoryConstants.Other
+			};
+
+			_expenseCategories = new List<ExpenseCategory>(defaultCategories.Select(i => new ExpenseCategory
+			{
+				Id = nr++,
+				Name = i
+			}));
+
+			Save();
 		}
 
 		public ExpenseCategory GetExpenseCategory(int id)

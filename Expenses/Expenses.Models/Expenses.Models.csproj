@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Expense.cs" />
     <Compile Include="ExpenseCategory.cs" />
+    <Compile Include="ExpenseCategoryConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

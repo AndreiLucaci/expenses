@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Expenses.Controllers")]
+[assembly: AssemblyTitle("Expenses.Business")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Expenses.Controllers")]
+[assembly: AssemblyProduct("Expenses.Business")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cea3dd3a-400e-4818-9ab5-dcddb0ed6ab0")]
+[assembly: Guid("92119ebf-55da-4c59-9eb2-7ca2ed4ed9ac")]
 
 // Version information for an assembly consists of the following four values:
 //

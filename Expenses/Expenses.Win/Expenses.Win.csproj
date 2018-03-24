@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ExpenseCategoryListController.cs" />
     <Compile Include="Expenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +78,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unity\ControllersConfiguration.cs" />
     <Compile Include="Unity\FormsConfiguration.cs" />
     <Compile Include="Unity\RepositoryConfiguration.cs" />
+    <Compile Include="Unity\UserControllsConfiguration.cs" />
+    <Compile Include="Unity\ViewModelBuildersConfiguration.cs" />
+    <Compile Include="ViewModelBuilders\ExpenseCategoryListViewModelBuilder.cs" />
+    <Compile Include="ViewModelBuilders\IViewModelBuilder.cs" />
+    <Compile Include="ViewModels\ExpenseCategoryListViewModel.cs" />
+    <Compile Include="Views\ExpenseCategoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ExpenseCategoryList.Designer.cs">
+      <DependentUpon>ExpenseCategoryList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ExpenseCategoryList.resx">
+      <DependentUpon>ExpenseCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,10 +122,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Expenses.Business\Expenses.Business.csproj">
+      <Project>{92119EBF-55DA-4C59-9EB2-7CA2ED4ED9AC}</Project>
+      <Name>Expenses.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Expenses.Models\Expenses.Models.csproj">
+      <Project>{BC3C5837-933C-417D-8FD5-118A0A42A336}</Project>
+      <Name>Expenses.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Expenses.Repository\Expenses.Repository.csproj">
       <Project>{A74C0C05-65AD-4E0D-927B-0CC32A0990B6}</Project>
       <Name>Expenses.Repository</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

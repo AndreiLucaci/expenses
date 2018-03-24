@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Repository", "Expe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Tests", "Expenses.Tests\Expenses.Tests.csproj", "{534EC2F3-9099-4259-8960-96CAE495C318}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Controllers", "Expenses.Controllers\Expenses.Controllers.csproj", "{CEA3DD3A-400E-4818-9AB5-DCDDB0ED6AB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{534EC2F3-9099-4259-8960-96CAE495C318}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{534EC2F3-9099-4259-8960-96CAE495C318}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{534EC2F3-9099-4259-8960-96CAE495C318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA3DD3A-400E-4818-9AB5-DCDDB0ED6AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA3DD3A-400E-4818-9AB5-DCDDB0ED6AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA3DD3A-400E-4818-9AB5-DCDDB0ED6AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA3DD3A-400E-4818-9AB5-DCDDB0ED6AB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

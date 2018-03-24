@@ -12,5 +12,7 @@ namespace Expenses.Repository
 		int AddExpenseAsync(Expense expense, int categoryId);
 		int DeleteExpenseAsync(Expense expense, int categoryId);
 		int UpdateExpense(Expense expense);
+
+		int Save();
 	}
 }

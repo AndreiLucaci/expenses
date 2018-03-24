@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Expenses.Win.Unity;
+using Unity;
 
 namespace Expenses.Win
 {
@@ -14,9 +16,29 @@ namespace Expenses.Win
 		[STAThread]
 		static void Main()
 		{
+			var container = CreateContainer();
+
+			container
+				.ConfigureWithFileRepositories()
+				.ConfigureWithForms();
+
+
+			var form = container.Resolve<Expenses>();
+
 			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			//Application.SetCompatibleTextRenderingDefault(false);
+			Run(form);
+		}
+
+		private static void Run(Form form)
+		{
+			Application.Run(form);
+		}
+
+
+		public static IUnityContainer CreateContainer()
+		{
+			return new UnityContainer();;
 		}
 	}
 }

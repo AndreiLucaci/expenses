@@ -7,7 +7,7 @@ namespace Expenses.Models
 		public int Id { get; set; }
 
 		public string Name { get; set; }
-		public IEnumerable<Expense> Expenses { get; set; }
+		public List<Expense> Expenses { get; set; }
 
 		public override bool Equals(object obj)
 			=> obj is ExpenseCategory category &&

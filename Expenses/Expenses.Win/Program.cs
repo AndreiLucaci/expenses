@@ -17,6 +17,7 @@ namespace Expenses.Win
 
 			container
 				.ConfigureWithFileRepositories()
+				.ConfigureWithConverters()
 				.ConfigureWithViewModelBuilders()
 				.ConfigureWithUserControllers()
 				.ConfigureWithForms();

@@ -1,6 +1,5 @@
 ﻿using Expenses.Business;
-using Expenses.Win.Controllers;
-using Expenses.Win.Views;
+using Expenses.Win.Views.ExpenseCategoryList;
 using Unity;
 
 namespace Expenses.Win.Unity

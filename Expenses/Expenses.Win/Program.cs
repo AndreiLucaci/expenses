@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Expenses.Win.Unity;
 using Unity;
@@ -20,6 +17,8 @@ namespace Expenses.Win
 
 			container
 				.ConfigureWithFileRepositories()
+				.ConfigureWithViewModelBuilders()
+				.ConfigureWithUserControllers()
 				.ConfigureWithForms();
 
 
@@ -34,7 +33,6 @@ namespace Expenses.Win
 		{
 			Application.Run(form);
 		}
-
 
 		public static IUnityContainer CreateContainer()
 		{

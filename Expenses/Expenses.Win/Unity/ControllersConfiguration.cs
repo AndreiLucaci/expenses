@@ -9,6 +9,7 @@ namespace Expenses.Win.Unity
 		public static IUnityContainer ConfigureWithControllers(IUnityContainer container)
 		{
 			container.RegisterType<Controller, ExpenseCategoryListController>();
+			container.RegisterType<Controller, ExpenseAddFormController>();
 
 			return container;
 		}

@@ -10,21 +10,24 @@ namespace Expenses.Win.Controllers
 	{
 		private readonly IRepository _repository;
 		private readonly ExpenseCategoryListViewModelBuilder _viewModelBuilder;
+		private readonly ExpenseCategoryList _expenseCategoryListView;
 
 		public ExpenseCategoryListController(IRepository repository,
-			ExpenseCategoryListViewModelBuilder viewModelBuilder)
+			ExpenseCategoryListViewModelBuilder viewModelBuilder,
+			ExpenseCategoryList expenseCategoryListView)
 		{
 			_repository = repository;
 			_viewModelBuilder = viewModelBuilder;
+			_expenseCategoryListView = expenseCategoryListView;
 		}
 
 		public override UserController GenerateView(object model = null)
 		{
-			View = new ExpenseCategoryList();
+			View = _expenseCategoryListView;
 
 			if (model != null && model is ExpenseCategoryListViewModel viewModel)
 			{
-				((ExpenseCategoryList) View)?.SetModel(viewModel);
+				_expenseCategoryListView.SetModel(viewModel);
 			}
 
 			if (model == null)

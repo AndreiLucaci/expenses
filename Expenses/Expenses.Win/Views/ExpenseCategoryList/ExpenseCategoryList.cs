@@ -1,14 +1,19 @@
-﻿using System.Windows.Forms;
+﻿using System;
 using Expenses.Business;
-using Expenses.Win.Controllers;
+using Expenses.Win.Converters;
+using Expenses.Win.Events;
 using Expenses.Win.ViewModels;
 
 namespace Expenses.Win.Views.ExpenseCategoryList
 {
 	public partial class ExpenseCategoryList : UserController
 	{
-		public ExpenseCategoryList()
+		private readonly IConverter<ExpenseCategoryViewModel, ExpenseCategorySelectViewModel> _converter;
+		public event EventHandler<ExpenseCategorySelectEvent> ExpenseCategorySelected;
+
+		public ExpenseCategoryList(IConverter<ExpenseCategoryViewModel, ExpenseCategorySelectViewModel> converter)
 		{
+			_converter = converter;
 			InitializeComponent();
 		}
 
@@ -37,7 +42,10 @@ namespace Expenses.Win.Views.ExpenseCategoryList
 
 		private void LoadCategoryInformation(ExpenseCategoryViewModel viewModel)
 		{
-			MessageBox.Show(viewModel.Name);
+			ExpenseCategorySelected?.Invoke(this, new ExpenseCategorySelectEvent
+			{
+				ExpenseCategorySelectViewModel = _converter.Convert(viewModel)
+			});
 		}
 	}
 }

@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.expensePanel = new System.Windows.Forms.Panel();
+			this.expenseWorkAreaPanel = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
 			// 
 			// expensePanel
@@ -39,11 +40,20 @@
 			this.expensePanel.Size = new System.Drawing.Size(468, 717);
 			this.expensePanel.TabIndex = 0;
 			// 
+			// expenseWorkAreaPanel
+			// 
+			this.expenseWorkAreaPanel.Dock = System.Windows.Forms.DockStyle.Left;
+			this.expenseWorkAreaPanel.Location = new System.Drawing.Point(468, 0);
+			this.expenseWorkAreaPanel.Name = "expenseWorkAreaPanel";
+			this.expenseWorkAreaPanel.Size = new System.Drawing.Size(526, 717);
+			this.expenseWorkAreaPanel.TabIndex = 1;
+			// 
 			// Expenses
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1443, 717);
+			this.Controls.Add(this.expenseWorkAreaPanel);
 			this.Controls.Add(this.expensePanel);
 			this.Name = "Expenses";
 			this.Text = "Form1";
@@ -54,6 +64,7 @@
 		#endregion
 
 		private System.Windows.Forms.Panel expensePanel;
+		private System.Windows.Forms.Panel expenseWorkAreaPanel;
 	}
 }
 

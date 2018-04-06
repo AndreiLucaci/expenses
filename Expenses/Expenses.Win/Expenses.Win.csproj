@@ -70,9 +70,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ExpenseAddFormController.cs" />
     <Compile Include="Controllers\ExpenseCategoryListController.cs" />
     <Compile Include="Converters\ExpenseCategory\ExpenseCategoryToExpenseCategoryViewModelConverter.cs" />
+    <Compile Include="Converters\ExpenseCategory\ExpenseCategoryViewModelToExpenseCategorySelectViewModelConverter.cs" />
+    <Compile Include="Converters\Expense\ExpenseToExpenseViewModelTwoWayConverter.cs" />
     <Compile Include="Converters\IConverter.cs" />
+    <Compile Include="Converters\OneWayConverter.cs" />
+    <Compile Include="Converters\TwoWayConverter.cs" />
+    <Compile Include="Events\ExpenseAddFormSaveEvent.cs" />
+    <Compile Include="Events\ExpenseCategorySelectEvent.cs" />
     <Compile Include="Events\ExpenseCategoryViewModelEvent.cs" />
     <Compile Include="Expenses.cs">
       <SubType>Form</SubType>
@@ -90,8 +97,10 @@
     <Compile Include="Unity\ViewModelBuildersConfiguration.cs" />
     <Compile Include="ViewModelBuilders\ExpenseCategoryListViewModelBuilder.cs" />
     <Compile Include="ViewModelBuilders\IViewModelBuilder.cs" />
+    <Compile Include="ViewModels\ExpenseCategorySelectViewModel.cs" />
     <Compile Include="ViewModels\ExpenseCategoryListViewModel.cs" />
     <Compile Include="ViewModels\ExpenseCategoryViewModel.cs" />
+    <Compile Include="ViewModels\ExpenseViewModel.cs" />
     <Compile Include="Views\ExpenseCategoryList\ExpenseCategoryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +112,12 @@
     </Compile>
     <Compile Include="Views\ExpenseCategoryList\_ExpenseCategoryTile.Designer.cs">
       <DependentUpon>_ExpenseCategoryTile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expense\ExpenseAddForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Expense\ExpenseAddForm.Designer.cs">
+      <DependentUpon>ExpenseAddForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
@@ -121,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExpenseCategoryList\_ExpenseCategoryTile.resx">
       <DependentUpon>_ExpenseCategoryTile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Expense\ExpenseAddForm.resx">
+      <DependentUpon>ExpenseAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
